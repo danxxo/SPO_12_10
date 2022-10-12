@@ -5,7 +5,8 @@ Amnesia..need arguments
 
 $ ./romb.sh 20
 Output:
-*         ..   
+<div>
+          ..   
          ....  
         ......  
        ........  
@@ -24,7 +25,7 @@ Output:
         ......  
          ....  
           ..  
-*
+</div>
 $ ./romb.sh 31
 Output:
                .

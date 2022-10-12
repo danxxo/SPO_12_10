@@ -5,7 +5,7 @@ Amnesia..need arguments
 
 $ ./romb.sh 20
 Output:
-"         ..   
+*         ..   
          ....  
         ......  
        ........  
@@ -24,7 +24,7 @@ Output:
         ......  
          ....  
           ..  
-"
+*
 $ ./romb.sh 31
 Output:
                .

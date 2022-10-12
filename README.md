@@ -6,6 +6,7 @@ Amnesia..need arguments
 $ ./romb.sh 20
 Output:
 <div>
+<a>
           ..   
          ....  
         ......  
@@ -25,6 +26,7 @@ Output:
         ......  
          ....  
           ..  
+          </a>
 </div>
 $ ./romb.sh 31
 Output:

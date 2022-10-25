@@ -7,10 +7,12 @@ Amnesia..need arguments
 
 ```
 $ ./romb.sh 0
+output:
 ```
 
 ```
 $ ./romb.sh -1
+output:
 ```
 
 ```

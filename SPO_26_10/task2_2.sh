@@ -19,5 +19,10 @@ done
 
 sum=$(( ($sum % 26) + 96 ))
 
+if [ $sum = 96 ]; then 
+	echo z
+	exit 0
+fi
+
 printf "output: \x$(printf %x $sum)"	
 echo

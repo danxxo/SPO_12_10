@@ -28,6 +28,11 @@ if [[ $1 == "-c" ]]; then
 	# k is number of digits [0..1] in number_base_two
 	for (( cnt=0; $cnt < $num_amount; cnt++ )); do
 		num_digit=${num:$cnt:1}
+		
+		# bc - basic calculator in commmand line
+		# we give echo output as the input in basic calculator
+		# obase=_base says bc that we need to calculate our input
+		# (in down ex) num_digit into _base(num_digit)
 		number_base_two=$(echo "obase=2; $num_digit" | bc)
 		k=$((${#number_base_two} - 1))
 		for (( cntk=0; cntk < k; cntk++ )); do
@@ -66,7 +71,7 @@ if [[ $1 == "-d" ]]; then
 		else
 			((cnt++))
 			
-			# echo $(( base#$your_number )) returns your number in need base
+			# echo $(( base#$your_number )) returns 10_base number from your base 
 			echo -ne $((2#${coded_number:$cnt:$cnt_zero}))
 			cnt=$(($cnt_zero + $cnt))
 			cnt_zero=1

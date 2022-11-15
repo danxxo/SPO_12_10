@@ -31,8 +31,10 @@ if [[ $1 == "-c" ]]; then
 		
 		# bc - basic calculator in commmand line
 		# we give echo output as the input in basic calculator
-		# obase=_base says bc that we need to calculate our input
-		# (in down ex) num_digit into _base(num_digit)
+		# ibase - input base, obase - output base
+		# if we didn t write ibase, we mean that our num_digit is in 10_base
+		# so echo "obase=2; $num_digit" | bc will calculate 10_base num_digit in 2_base num_digit
+		# ex echo "ibase=5; obase=2; $num_digit" | bc will calculate 5_base num_digit into 2_base num_digit 
 		number_base_two=$(echo "obase=2; $num_digit" | bc)
 		k=$((${#number_base_two} - 1))
 		for (( cntk=0; cntk < k; cntk++ )); do

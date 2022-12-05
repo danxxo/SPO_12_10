@@ -9,18 +9,18 @@ swap() {
 
 up_register() {
 string=$@
+echo ----------------------------------------
+echo input string : $string
 for ((i=0; i<${#string}; i++)); do
 	char=${string:$i:1}
 	char_ascii=$(echo -n $char | od -An -tuC)
 	 
 	if [[ $char_ascii -gt 96 ]] && [[ $char_ascii -lt 123 ]]; then
 		char_ascii=$(( $char_ascii - 32 ))
-		char_up=$(printf "/x$(printf %x $char_ascii)")
-		string=
-	else
-		break
-	fi
-		
+		char_up=$(printf "\x$(printf %x $char_ascii)")
+		string=$(echo $string | tr $char $char_up )
+		echo old char : $char , new char : $char_up
+	fi	
 done
 }
 
@@ -49,11 +49,8 @@ for i in ${phrase[@]}; do
 done
 
 
-string="sbsASC"
+string="haclhLICDBIBUVDdvbidbkkdsbLIDVBIB"
 up_register $string
 
-char='s'
-char2='S'
-string=$(echo -n $string | tr $char $char2)
 echo $string
 exit 0

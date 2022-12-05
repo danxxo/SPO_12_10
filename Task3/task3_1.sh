@@ -5,7 +5,6 @@ declare b_string # 2nd string
 declare word="Longest(a, b) --> "
 declare unique_string=""
 declare answer=""
-declare string=""
 
 # reading
 echo -n "a = "
